@@ -1,167 +1,398 @@
-/* Reset */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  height: 100vh;
-  overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
 }
 
-/* Hero Section */
-.hero {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  background-image: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1600&q=80');
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-/* Gradient overlay */
-.overlay {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(255,255,255,0.4);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px); /* Safari support */
-  z-index: 1;
-}
-
-/* Container */
 .container {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
-  background: rgba(255, 255, 255, 0.25);
-  border-radius: 20px;
-  padding: 50px 30px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-
-  /* Blur effect */
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px); /* Safari support */
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-/* Heading Animation */
-h1 {
-  font-size: 4rem;
-  font-weight: 700;
-  background: linear-gradient(90deg, #56ab2f, #a8e063);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  opacity: 0;
-  transform: translateY(-50px);
-  animation: slideDown 1s forwards;
+/* Header Styles */
+.header {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
 }
 
-@keyframes slideDown {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-/* Subtitle Animation */
-h2 {
-  font-size: 2rem;
-  font-weight: 500;
-  color: #2c3e50;
-  margin-top: 20px;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease-out;
-  cursor: pointer;
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    color: #667eea;
 }
 
-.fade-in {
-  opacity: 1;
-  transform: translateY(0);
+.logo h1 {
+    font-size: 28px;
+    color: #2d3748;
 }
 
-/* Buttons */
-.buttons {
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+.header-info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-size: 14px;
+    color: #718096;
 }
 
-button {
-  padding: 15px 35px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  background: linear-gradient(90deg, #56ab2f, #a8e063);
-  color: #fff;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-  position: relative;
-  overflow: hidden;
+.status-badge {
+    background: #48bb78;
+    color: white;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    animation: pulse 2s infinite;
 }
 
-button::after {
-  content:'';
-  position:absolute;
-  top:0; left:50%;
-  transform: translateX(-50%) scaleY(0);
-  width:100%; height:100%;
-  background: rgba(255,255,255,0.2);
-  transition: transform 0.5s;
-  border-radius:50px;
-  z-index:0;
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
 }
 
-button:hover::after {
-  transform: translateX(-50%) scaleY(1);
+/* Dashboard Grid */
+.dashboard {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-button:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+/* Sensor Cards */
+.sensor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    grid-column: 1 / -1;
 }
 
-/* Floating Elements */
-.floating {
-  position: absolute;
-  font-size: 2rem;
-  opacity: 0.8;
-  animation: float 6s ease-in-out infinite;
+.sensor-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.leaf1 { top: 10%; left: 5%; animation-delay: 0s; }
-.leaf2 { top: 30%; right: 5%; animation-delay: 2s; }
-.sun { top: 5%; right: 20%; font-size:3rem; animation-delay:1s; }
-.tractor { bottom:10%; left:20%; font-size:3rem; animation-delay:3s; }
-
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-20px) rotate(10deg); }
-  100% { transform: translateY(0px); }
+.sensor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* Hover effect for subtitle */
-h2:hover {
-  color: #388e3c;
-  text-shadow: 0 0 5px rgba(56, 142, 60, 0.3);
-  transition: 0.3s ease;
+.sensor-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
 }
 
-/* Responsive */
-@media (max-width:768px){
-  h1 { font-size: 2.5rem; }
-  h2 { font-size: 1.5rem; }
-  .buttons { flex-direction: column; gap: 15px; }
+.sensor-icon {
+    font-size: 32px;
+}
+
+.sensor-header h3 {
+    font-size: 18px;
+    color: #4a5568;
+}
+
+.sensor-value {
+    font-size: 42px;
+    font-weight: bold;
+    margin: 15px 0;
+    color: #2d3748;
+}
+
+.sensor-status {
+    font-size: 14px;
+    color: #718096;
+    margin-bottom: 15px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.5s ease, background 0.3s ease;
+}
+
+.temperature .progress-fill {
+    background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+}
+
+.humidity .progress-fill {
+    background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.soil .progress-fill {
+    background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.light .progress-fill {
+    background: linear-gradient(90deg, #fa709a 0%, #fee140 100%);
+}
+
+/* Control Panel */
+.control-panel {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    grid-column: 1 / -1;
+}
+
+.control-panel h2 {
+    margin-bottom: 20px;
+    color: #2d3748;
+    font-size: 22px;
+}
+
+.controls-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.control-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #f7fafc;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+.control-item:hover {
+    background: #edf2f7;
+}
+
+.control-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.control-icon {
+    font-size: 28px;
+}
+
+.control-label {
+    font-weight: 500;
+    color: #4a5568;
+}
+
+/* Toggle Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 55px;
+    height: 28px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cbd5e0;
+    transition: 0.4s;
+    border-radius: 28px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #48bb78;
+}
+
+input:checked + .slider:before {
+    transform: translateX(27px);
+}
+
+/* Activity Log */
+.activity-log {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    grid-column: 1 / -1;
+}
+
+.activity-log h2 {
+    margin-bottom: 20px;
+    color: #2d3748;
+    font-size: 22px;
+}
+
+.log-container {
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.log-item {
+    padding: 12px;
+    border-left: 3px solid #667eea;
+    margin-bottom: 10px;
+    background: #f7fafc;
+    border-radius: 5px;
+    display: flex;
+    gap: 15px;
+}
+
+.log-time {
+    color: #718096;
+    font-weight: 600;
+    min-width: 60px;
+}
+
+.log-message {
+    color: #4a5568;
+}
+
+/* Weather Panel */
+.weather-panel {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    grid-column: 1 / -1;
+}
+
+.weather-panel h2 {
+    margin-bottom: 20px;
+    color: #2d3748;
+    font-size: 22px;
+}
+
+.weather-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.weather-item {
+    text-align: center;
+    padding: 20px;
+    background: #f7fafc;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.weather-item:hover {
+    transform: scale(1.05);
+}
+
+.weather-day {
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 10px;
+}
+
+.weather-icon {
+    font-size: 48px;
+    margin: 10px 0;
+}
+
+.weather-temp {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2d3748;
+    margin: 10px 0;
+}
+
+.weather-desc {
+    color: #718096;
+    font-size: 14px;
+}
+
+/* Scrollbar Styles */
+.log-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.log-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.log-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.log-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .logo h1 {
+        font-size: 22px;
+    }
+
+    .sensor-value {
+        font-size: 32px;
+    }
+
+    .controls-grid,
+    .sensor-grid,
+    .weather-grid {
+        grid-template-columns: 1fr;
+    }
 }

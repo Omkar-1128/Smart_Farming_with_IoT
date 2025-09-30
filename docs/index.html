@@ -1,31 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smart Farming</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <section class="hero">
-    <div class="overlay"></div>
-    <div class="container">
-      <h1>Welcome to Smart Farming</h1>
-      <h2>Innovating Agriculture with Technology 🌾🚜</h2>
-      <div class="buttons">
-        <button id="learnBtn">Learn More</button>
-        <button id="exploreBtn">Explore Features</button>
-      </div>
+<!-- Control Panel -->
+<section class="control-panel">
+    <h2>Automated Controls</h2>
+    <div class="controls-grid">
+
+        <div class="control-item">
+            <div class="control-info">
+                <span class="control-icon">💦</span>
+                <span class="control-label">Irrigation System</span>
+            </div>
+            <input type="checkbox" id="irrigation-toggle" />
+            <label for="irrigation-toggle" class="switch">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="control-item">
+            <div class="control-info">
+                <span class="control-icon">🌪️</span>
+                <span class="control-label">Ventilation Fan</span>
+            </div>
+            <input type="checkbox" id="fan-toggle" />
+            <label for="fan-toggle" class="switch">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="control-item">
+            <div class="control-info">
+                <span class="control-icon">💡</span>
+                <span class="control-label">Grow Lights</span>
+            </div>
+            <input type="checkbox" id="light-toggle" />
+            <label for="light-toggle" class="switch">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="control-item">
+            <div class="control-info">
+                <span class="control-icon">🔔</span>
+                <span class="control-label">Alerts Enabled</span>
+            </div>
+            <input type="checkbox" id="alert-toggle" checked />
+            <label for="alert-toggle" class="switch">
+                <span class="slider"></span>
+            </label>
+        </div>
+
     </div>
-
-    <!-- Floating elements -->
-    <div class="floating leaf1">🍃</div>
-    <div class="floating leaf2">🌿</div>
-    <div class="floating sun">☀️</div>
-    <div class="floating tractor">🚜</div>
-  </section>
-
-  <script src="script.js"></script>
-</body>
-</html>
+</section>
