@@ -3,21 +3,20 @@ window.addEventListener("DOMContentLoaded", () => {
   const learnBtn = document.getElementById("learnBtn");
   const exploreBtn = document.getElementById("exploreBtn");
 
-  // Fade in subtitle after 1 second
+  // Fade-in subtitle after 1 second
   setTimeout(() => {
     h2.classList.add("fade-in");
   }, 1000);
 
-  // Change subtitle on click
+  // Change subtitle text on click
   h2.addEventListener("click", () => {
     h2.textContent = "Empowering Agriculture with Smart Solutions 🌱🚜";
   });
 
-  // Button interactions
+  // Button actions
   learnBtn.addEventListener("click", () => {
     alert("Redirecting to Learn More section...");
   });
-
   exploreBtn.addEventListener("click", () => {
     alert("Redirecting to Explore Features section...");
   });
