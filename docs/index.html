@@ -1,51 +1,51 @@
-<!-- Control Panel -->
-<section class="control-panel">
-    <h2>Automated Controls</h2>
-    <div class="controls-grid">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Farm IoT Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-        <div class="control-item">
-            <div class="control-info">
-                <span class="control-icon">💦</span>
-                <span class="control-label">Irrigation System</span>
+    <header>
+        <h1>Smart Farm IoT Monitoring</h1>
+    </header>
+
+    <main class="dashboard">
+        <section class="data-container">
+            <h2>Real-Time Sensor Data</h2>
+            <div class="sensor-card" id="temperature-card">
+                <h3>Temperature</h3>
+                <p class="value" id="temp-value">--</p>
+                <p class="unit">°C</p>
             </div>
-            <input type="checkbox" id="irrigation-toggle" />
-            <label for="irrigation-toggle" class="switch">
-                <span class="slider"></span>
-            </label>
-        </div>
-
-        <div class="control-item">
-            <div class="control-info">
-                <span class="control-icon">🌪️</span>
-                <span class="control-label">Ventilation Fan</span>
+            <div class="sensor-card" id="humidity-card">
+                <h3>Humidity</h3>
+                <p class="value" id="humid-value">--</p>
+                <p class="unit">%</p>
             </div>
-            <input type="checkbox" id="fan-toggle" />
-            <label for="fan-toggle" class="switch">
-                <span class="slider"></span>
-            </label>
-        </div>
-
-        <div class="control-item">
-            <div class="control-info">
-                <span class="control-icon">💡</span>
-                <span class="control-label">Grow Lights</span>
+            <div class="sensor-card" id="moisture-card">
+                <h3>Soil Moisture</h3>
+                <p class="value" id="moist-value">--</p>
+                <p class="unit">%</p>
             </div>
-            <input type="checkbox" id="light-toggle" />
-            <label for="light-toggle" class="switch">
-                <span class="slider"></span>
-            </label>
-        </div>
+        </section>
 
-        <div class="control-item">
-            <div class="control-info">
-                <span class="control-icon">🔔</span>
-                <span class="control-label">Alerts Enabled</span>
+        <section class="controls-container">
+            <h2>System Controls</h2>
+            <div class="control-panel">
+                <h3>Irrigation System</h3>
+                <button id="irrigation-toggle" class="control-button off">Turn ON</button>
+                <p class="status-indicator">Status: <span id="irrigation-status">OFF</span></p>
             </div>
-            <input type="checkbox" id="alert-toggle" checked />
-            <label for="alert-toggle" class="switch">
-                <span class="slider"></span>
-            </label>
-        </div>
+        </section>
+    </main>
 
-    </div>
-</section>
+    <footer>
+        <p>&copy; 2024 IoT Farming Solution</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
